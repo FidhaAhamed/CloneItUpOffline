@@ -352,6 +352,26 @@ body {
     text-decoration: none;
 }
 
+.mentor {
+    display: flex; /* Use flexbox to arrange items in a row */
+    align-items: center; /* Align items vertically centered */
+    margin-bottom: 20px; /* Space between mentor cards */
+}
+
+.mentor img {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    border-radius: 50%; /* Make it circular */
+    margin-right: 15px; /* Space between image and details */
+}
+
+.mentor-details {
+    display: flex;
+    flex-direction: column; /* Stack details vertically */
+    font-size: 14px;
+}
+
+
 .right-sidebar .mentors .section a.see-all:hover,
 .right-sidebar .learning .section a.see-all:hover {
     text-decoration: underline;
@@ -360,35 +380,69 @@ body {
 /* Learning Process Section Images */
 .learning .progress-images {
     display: flex;
-    flex-direction: column; /* Stack images vertically */
+    flex-direction: column; /* Keep images stacked vertically */
     gap: 10px; /* Space between images */
     margin-top: 10px; /* Space above images */
 }
 
 .learning .progress-images img {
-    width: 100%; /* Full width to match the sidebar */
+    width: 200px; /* Full width to match the sidebar */
     height: auto;
     border-radius: 8px; /* Rounded corners for aesthetics */
     object-fit: cover; /* Ensures the image covers the container without distortion */
 }
 
-/* Responsive Learning Process Images */
-@media (min-width: 600px) {
-    .learning .progress-images {
-        flex-direction: row; /* Side by side on wider screens */
+@media (min-width: 1920px) {
+    .dashboard {
+        flex-direction: row; /* Maintain row layout for larger screens */
     }
 
-    .learning .progress-images img {
-        width: 48%; /* Adjust width to fit two images side by side with some gap */
-    }
-}
-
-@media (max-width: 599px) {
-    .learning .progress-images {
-        flex-direction: column; /* Stack vertically on smaller screens */
+    .sidebar {
+        width: 100px; /* Wider sidebar */
     }
 
-    .learning .progress-images img {
-        width: 100%; /* Full width on small screens */
+    .content {
+        width: calc(100% - 100px - 300px); /* Adjust width for larger sidebar */
+    }
+
+    .course-card {
+        flex-direction: row; /* Adjust for larger card layout */
+        padding: 30px; /* Increased padding */
+    }
+
+    .course-image {
+        width: 350px; /* Larger fixed width */
+        height: 250px; /* Larger fixed height */
+    }
+
+    .header {
+        padding: 30px; /* Increased header padding */
+    }
+
+    .header h1 {
+        font-size: 32px; /* Larger font size for the header */
+    }
+
+    .tabs li {
+        padding: 15px 30px; /* Adjust padding */
+        font-size: 18px; /* Larger font size */
+    }
+
+    .user-info img {
+        width: 40px; /* Larger avatar image */
+        height: 40px; /* Larger avatar image */
+    }
+
+    .course-footer button {
+        font-size: 28px; /* Larger button font */
+        padding: 10px; /* Adjust padding for larger button */
+    }
+
+    .course-footer .tags {
+        margin: 0; /* Remove margin */
+    }
+
+    .star-rating {
+        font-size: 24px; /* Larger star rating */
     }
 }

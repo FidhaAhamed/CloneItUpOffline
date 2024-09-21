@@ -38,24 +38,29 @@ const courses = [
 
 const mentors = [
     {
-        name: 'John Doe',
-        designation: 'Senior Developer',
-        experience: '5 years',
+        name: 'John Wilson',
+        designation: 'UI / UX Designer',
+        experience: '6 yr',
         imageSrc: 'Assets/mentor1.png'
     },
     {
-        name: 'Jane Smith',
-        designation: 'UI/UX Designer',
-        experience: '4 years',
+        name: 'Daniel Hill',
+        designation: 'Test Engineer',
+        experience: '5 yr',
         imageSrc: 'Assets/mentor2.png'
     },
     {
-        name: 'Emily Johnson',
-        designation: 'Project Manager',
-        experience: '6 years',
+        name: 'sofia Harris',
+        designation: 'Python Developer',
+        experience: '8 yr',
         imageSrc: 'Assets/mentor3.png'
     },
-    // Add more mentors as needed
+    {
+        name: 'Eva Smith',
+        designation: 'Motion Designer',
+        experience: '4 yr',
+        imageSrc: 'Assets/mentor4.png'
+    },
 ];
 
 // Function to generate sidebar icons
