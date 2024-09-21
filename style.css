@@ -1,0 +1,394 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Zona Pro;
+    src: url(fonts/ZonaPro-Bold.otf) format('opentype');
+    font-weight: bold;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Zona Pro', sans-serif;
+    background-color: #F2F4F6;
+    display: flex;
+    flex-direction: column;
+}
+
+.line {
+    height: 1px;
+    background-color: #D7D7D7;
+    width: 100%;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    width: 100%; /* Ensures full width */
+    min-height: 100vh; /* Ensures full height */
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 80px;
+    background-color: #1C1C1C;
+    height: 100vh; /* Full height sidebar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    flex-shrink: 0; /* Prevents sidebar from shrinking */
+}
+
+.logout img,
+.icon img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.logout {
+    margin-top: auto;
+    padding-bottom: 20px;
+}
+
+.logout:hover img {
+    content: url('Assets/logouth.png'); /* Change to your hover image */
+}
+
+.logo img {
+    width: 50px; /* Increased width */
+    height: 50px; /* Increased height */
+    margin-bottom: 20px; /* Optional: Increase margin if needed */
+    cursor: pointer;
+}
+
+.content {
+    flex-grow: 1; /* Ensures it takes up remaining space */
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 80px - 300px); /* Adjusted to account for increased right-sidebar */
+}
+
+.header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.header h1 {
+    font-size: 26px;
+}
+
+.user-info {
+    font-size: 16px;
+    color: #333;
+    display: flex; /* Use flex to align items */
+    align-items: center; /* Center avatar and text */
+}
+
+.user-info img {
+    width: 30px; /* Avatar image width */
+    height: 30px; /* Avatar image height */
+    border-radius: 50%; /* Makes it circular */
+    margin-left: 10px; /* Space between text and avatar */
+}
+
+.dropdown-symbol {
+    margin-left: 10px; /* Space between avatar and dropdown symbol */
+    cursor: pointer; /* Change cursor to pointer */
+    font-size: 16px;
+}
+
+.main-content {
+    display: flex;
+    flex: 1; /* Takes up remaining height */
+    overflow-y: auto; /* Adds scrolling for content if necessary */
+}
+
+.course-tab {
+    flex-grow: 1; /* Allows course area to expand */
+    padding: 20px;
+    width: calc(100% - 300px); /* Adjusted width for the right sidebar */
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tabs li {
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    color: #868686;
+}
+
+.tabs li:hover {
+    background-color: #E0E0E0;
+    border-radius: 5px;
+}
+
+.courses {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.course-card {
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%; /* Full width */
+}
+
+.course-image {
+    width: 300px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    border-radius: 8px;
+    margin-right: 20px;
+    overflow: hidden; /* To prevent overflow */
+}
+
+.course-image img {
+    width: 100%; /* Full width image */
+    height: 100%; /* Ensure the image covers the container */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.course-info {
+    display: flex;
+    flex-direction: column; /* Vertical layout */
+    justify-content: space-between; /* Space between elements */
+    flex-grow: 1; /* Allows it to take remaining space */
+}
+
+.course-info h3 {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between; /* Space between title and rating */
+    align-items: center; /* Center items vertically */
+}
+
+.course-info p {
+    font-size: 14px;
+    color: #666;
+    flex-grow: 1; /* Take up remaining space */
+}
+
+.tags {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    flex-wrap: wrap; /* Allow tags to wrap if necessary */
+}
+
+.tags span {
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: #1C1C1C;
+    border-style: solid;
+    border-width: 1px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.course-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between tags and button */
+    margin-top: 10px;
+    width: 100%;
+}
+
+.course-footer .tags {
+    margin: 0; /* Remove margin to align with the footer */
+}
+
+.course-footer button {
+    background-color: #2D61DE; 
+    border: none; /* No border */
+    color: #FFF; /* Color for the arrow */
+    font-weight: 700; /* Corrected font-weight */
+    cursor: pointer;
+    font-size: 24px; /* Larger arrow */
+    display: flex;
+    align-items: center; /* Center arrow vertically */
+    padding: 0;
+    width: 60px;
+    height: 40px;
+    border-radius: 30px;
+    text-align: center;
+    justify-content: center;
+}
+
+.course-footer button:hover {
+    background-color: #0637a8;
+}
+
+.star-rating {
+    color: #FFD700; /* Gold color for the star */
+    font-size: 18px; /* Adjust size if needed */
+    margin-left: 10px; /* Space between title and rating */
+}
+
+.right-sidebar {
+    width: 300px; /* Increased width for the right sidebar */
+    background-color: #FFF;
+    flex-shrink: 0; /* Prevents it from shrinking */
+    height: 100vh; /* Makes sure it's full height */
+    padding: 20px;
+    border: 1px solid #000;
+}
+
+/* Right Sidebar Section Styling */
+.right-sidebar .section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Ensure h2 and a have the same font size and style */
+.right-sidebar .section h2,
+.right-sidebar .section a.see-all {
+    font-size: 16px; /* Set your desired font size */
+    margin: 0; /* Remove default margins */
+    display: flex;
+    align-items: center;
+}
+
+/* Specifically, style the "See all >" links */
+.right-sidebar .section a.see-all {
+    color: blue; /* Blue color as per requirement */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Indicate it's clickable */
+    display: flex;
+    align-items: center;
+}
+
+/* Add hover effect for better UX */
+.right-sidebar .section a.see-all:hover {
+    text-decoration: underline;
+}
+
+/* Adjust for Date section if it includes an image */
+.right-sidebar .section.date {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the start */
+}
+
+.right-sidebar .section.date .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Ensure it spans the full width */
+}
+
+.right-sidebar .section.date .header-row h2,
+.right-sidebar .section.date .header-row a.see-all {
+    font-size: 16px; /* Same font size */
+    margin: 0;
+}
+
+.right-sidebar .section.date .header-row a.see-all {
+    color: blue;
+}
+
+.right-sidebar .date img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px; /* Add spacing above the image */
+}
+
+/* Mentors and Learning Process Sections */
+.right-sidebar .mentors .section,
+.right-sidebar .learning .section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right-sidebar .mentors .section h2,
+.right-sidebar .mentors .section a.see-all,
+.right-sidebar .learning .section h2,
+.right-sidebar .learning .section a.see-all {
+    font-size: 16px; /* Ensure same font size */
+    margin: 0;
+}
+
+.right-sidebar .mentors .section a.see-all,
+.right-sidebar .learning .section a.see-all {
+    color: blue;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.right-sidebar .mentors .section a.see-all:hover,
+.right-sidebar .learning .section a.see-all:hover {
+    text-decoration: underline;
+}
+
+/* Learning Process Section Images */
+.learning .progress-images {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    gap: 10px; /* Space between images */
+    margin-top: 10px; /* Space above images */
+}
+
+.learning .progress-images img {
+    width: 100%; /* Full width to match the sidebar */
+    height: auto;
+    border-radius: 8px; /* Rounded corners for aesthetics */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+/* Responsive Learning Process Images */
+@media (min-width: 600px) {
+    .learning .progress-images {
+        flex-direction: row; /* Side by side on wider screens */
+    }
+
+    .learning .progress-images img {
+        width: 48%; /* Adjust width to fit two images side by side with some gap */
+    }
+}
+
+@media (max-width: 599px) {
+    .learning .progress-images {
+        flex-direction: column; /* Stack vertically on smaller screens */
+    }
+
+    .learning .progress-images img {
+        width: 100%; /* Full width on small screens */
+    }
+}
